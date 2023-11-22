@@ -23,7 +23,7 @@ Vetor::~Vetor(){
 // size() = fim - inicio + 1 -> fim = size() + inicio - 1
 void Vetor::atribuir(int i, std::string valor){
     int fim = elementos_->size() + inicio_ - 1;
-        if(i < inicio_ || i >= fim){
+        if(i < inicio_ || i > fim){
             throw IndiceInvalido{inicio_, fim, i};
         }
         else{
@@ -33,7 +33,7 @@ void Vetor::atribuir(int i, std::string valor){
 
 std::string Vetor::valor(int i) const{
     int fim = elementos_->size() + inicio_ - 1;
-        if(i < inicio_ || i >= fim){
+        if(i < inicio_ || i > fim){
             throw IndiceInvalido{inicio_, fim, i};
         }
         else{
